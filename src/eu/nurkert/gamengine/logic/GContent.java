@@ -10,8 +10,6 @@ import java.util.Collections;
 import eu.nurkert.gamengine.logic.entities.GEntity;
 import eu.nurkert.gamengine.logic.events.GEventHandler;
 import eu.nurkert.gamengine.logic.events.essential.HandleObjectsGEvent;
-import eu.nurkert.ImmuneTillDeath.Game.Entitys.Cell;
-import eu.nurkert.ImmuneTillDeath.Game.Entitys.Player;
 
 public abstract class GContent {
 
@@ -85,7 +83,8 @@ public abstract class GContent {
 		while (num < gameSize) {
 //			if (this.objects.get(num) instanceof GEntity && ((GEntity) this.objects.get(num)).isDead()) {
 			if (objects.get(num) != null && (objects.get(num).getLocation().distance(viewCenter) > 2048
-					&& !(objects.get(num) instanceof Player) && !(objects.get(num) instanceof Cell)))
+					/*&& !(objects.get(num) instanceof Player) && !(objects.get(num) instanceof Cell)*/
+			))
 
 				objects.get(num).setUseless(true);
 

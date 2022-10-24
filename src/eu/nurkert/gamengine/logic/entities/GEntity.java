@@ -194,4 +194,6 @@ public abstract class GEntity extends GObject implements GEventHandler.GEventLis
 			kill();
 	}
 
+
+
 }
