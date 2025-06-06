@@ -2,22 +2,29 @@ package eu.nurkert.gamengine.logic;
 
 import java.util.Random;
 
-import eu.nurkert.ImmuneTillDeath.Game.World;
+/**
+ * This class previously depended on the example game implementation by using
+ * {@code eu.nurkert.ImmuneTillDeath.Game.World}. In order to make the engine
+ * self contained, the dependency was replaced with the generic
+ * {@link eu.nurkert.gamengine.logic.GContent} type so that any game can supply
+ * its own world implementation.
+ */
+import eu.nurkert.gamengine.logic.GContent;
 
 public class GLocation {
 
 	double x, y;
 	float angle;
-	World world;
+       GContent world;
 
-	public GLocation(double x, double y, float angle, World world) {
+       public GLocation(double x, double y, float angle, GContent world) {
 		this.x = x;
 		this.y = y;
 		this.angle = angle;
 		this.world = world;
 	}
 
-	public GLocation(double x, double y, World world) {
+       public GLocation(double x, double y, GContent world) {
 		this.x = x;
 		this.y = y;
 		this.angle = 0F;
@@ -92,7 +99,7 @@ public class GLocation {
 		return angle;
 	}
 	
-	public World getWorld() {
+       public GContent getWorld() {
 		return world;
 	}
 
